@@ -230,7 +230,7 @@ title: Days I've Been Single
     
     function updateCounters() {
         const now = new Date();
-        const diffMs = now - startDate;
+        const diffMs = Math.max(0, now - startDate);
         
         // Calculate time units
         const days = Math.floor(diffMs / (1000 * 60 * 60 * 24));
@@ -258,21 +258,21 @@ title: Days I've Been Single
         const statusElement = document.getElementById('status-text');
         let status = "Status: Just started";
         
-        if (days > 1825) { // 5 years
+        if (days >= 1825) { // 5 years
             status = "Status: Ascended Being (5+ Years)";
-        } else if (days > 1095) { // 3 years
+        } else if (days >= 1095) { // 3 years
             status = "Status: Monk Mode Activated (3+ Years)";
-        } else if (days > 730) { // 2 years
+        } else if (days >= 730) { // 2 years
             status = "Status: Legendary Solo Player (2+ Years)";
-        } else if (days > 365) { // 1 year
+        } else if (days >= 365) { // 1 year
             status = "Status: Master of My Destiny (1+ Year)";
-        } else if (days > 180) { // 6 months
+        } else if (days >= 180) { // 6 months
             status = "Status: Independent & Thriving (6+ Months)";
-        } else if (days > 90) { // 3 months
+        } else if (days >= 90) { // 3 months
             status = "Status: Finding Inner Peace (3+ Months)";
-        } else if (days > 30) { // 1 month
+        } else if (days >= 30) { // 1 month
             status = "Status: Getting Used To It (1+ Month)";
-        } else if (days > 7) { // 1 week
+        } else if (days >= 7) { // 1 week
             status = "Status: Freshly Single (1+ Week)";
         }
         
